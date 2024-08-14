@@ -132,6 +132,7 @@ body {
   background-color: #5e9175;
   transform: translateY(-3px);
 }
+
 .firmSection {
   padding: 20px;
   max-width: 600px;
@@ -182,6 +183,7 @@ body {
   align-items: center;
   gap: 5px;
 }
+
 .passwordContainer {
   position: relative;
 }
@@ -202,7 +204,6 @@ body {
 /* products table */
 
 /* Container styling */
-/* Container styling */
 .all-products-container {
   padding: 20px;
   max-width: 1200px; /* Make the container a bit wider for larger tables */
@@ -220,12 +221,14 @@ body {
   border-radius: 8px; /* Add rounded corners */
   overflow: hidden; /* Ensure the table respects the border radius */
 }
+
 /* Increase padding for headers and cells for better spacing */
 .product-table th,
 .product-table td {
   padding: 18px 25px; /* Increase padding for headers and cells */
   font-size: 16px; /* Slightly increase the font size */
 }
+
 /* Header styling */
 .product-table th {
   background-color: #59C9A5; /* Subtle green background for headers */
@@ -282,7 +285,34 @@ body {
 
 /* Responsive styling */
 @media (max-width: 768px) {
-  .product-table, .product-table thead, .product-table tbody, .product-table th, .product-table td, .product-table tr {
+  /* Adjusting the sidebar and main content for smaller screens */
+  .sideBarSection {
+    width: 100%;
+    height: auto;
+    padding: 10px 0;
+  }
+
+  .authSection {
+    width: 100%;
+    margin-left: 0; /* Remove the margin that accounts for the sidebar */
+    padding: 20px 10px;
+    height: auto;
+  }
+
+  .authForm {
+    padding: 20px;
+  }
+
+  .firmSection {
+    padding: 15px;
+  }
+
+  .product-table,
+  .product-table thead,
+  .product-table tbody,
+  .product-table th,
+  .product-table td,
+  .product-table tr {
     display: block; /* Make the table elements block level */
     width: 100%;
   }
@@ -310,106 +340,44 @@ body {
     width: 45%; /* Add space for the label */
     padding-right: 10px;
     white-space: nowrap;
-    text-align: left; /* Align label to the left */
+    text-align: left; /* Align labels to the left */
     font-weight: bold;
   }
   
-  /* Label the data */
-  .product-table td:nth-of-type(1):before { content: "Product Name"; }
-  .product-table td:nth-of-type(2):before { content: "Price"; }
-  .product-table td:nth-of-type(3):before { content: "Image"; }
-  .product-table td:nth-of-type(4):before { content: "Delete"; }
-}
-.firmName {
-  font-family: 'Helvetica Neue', Arial, sans-serif;
-  font-size: 16px;
-  font-weight: 500;
-  color: #333; /* A neutral dark gray */
-  padding: 8px 16px;
-  margin: 0;
-  background-color: #f8f8f8; /* A light gray background */
-  border-radius: 4px; /* Rounded corners for a softer look */
-  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1); /* A subtle shadow for depth */
-}
-
-/* Wrapper to center the content */
-.notFoundWrapper {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  height: 100vh;
-  background-color: #f9f9f9;
-  padding: 20px;
-  box-sizing: border-box;
-}
-
-/* Styling for the Go Back button */
-.goBackButton {
-  display: inline-block;
-  padding: 12px 24px;
-  background-color: #ff4d4d;
-  color: #ffffff;
-  text-decoration: none;
-  border-radius: 5px;
-  font-size: 16px;
-  font-weight: 600;
-  margin-bottom: 20px;
-  transition: background-color 0.3s ease-in-out, transform 0.2s;
-  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
-}
-
-.goBackButton:hover {
-  background-color: #e43d3d;
-  transform: translateY(-2px);
-}
-
-/* Container for the title and message */
-.notFoundContent {
-  text-align: center;
-  background-color: #ffffff;
-  padding: 50px;
-  border-radius: 10px;
-  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
-  animation: contentFadeIn 1s ease-in-out;
-}
-
-/* Title styling */
-.notFoundTitle {
-  font-size: 100px;
-  color: #ff4d4d;
-  margin: 0;
-  font-weight: bold;
-  letter-spacing: 2px;
-  animation: titleBounce 1.2s ease-in-out infinite;
-}
-
-/* Message styling */
-.notFoundMessage {
-  font-size: 20px;
-  color: #333333;
-  margin-top: 20px;
-  font-weight: 500;
-}
-
-/* Fade-in animation */
-@keyframes contentFadeIn {
-  from {
-    opacity: 0;
-    transform: translateY(20px);
+  /* Add labels to the cells */
+  .product-table td:nth-of-type(1):before {
+    content: "Image";
   }
-  to {
-    opacity: 1;
-    transform: translateY(0);
+  .product-table td:nth-of-type(2):before {
+    content: "Product Name";
+  }
+  .product-table td:nth-of-type(3):before {
+    content: "Price";
+  }
+  .product-table td:nth-of-type(4):before {
+    content: "Action";
   }
 }
 
-/* Bounce animation for the title */
-@keyframes titleBounce {
-  0%, 100% {
-    transform: translateY(0);
+@media (max-width: 480px) {
+  .navSection {
+    flex-direction: column;
+    height: auto;
+    text-align: center;
+    padding: 10px 0;
   }
-  50% {
-    transform: translateY(-10px);
+
+  .authForm {
+    width: 100%;
+    padding: 15px;
+  }
+
+  .product-table td {
+    font-size: 14px; /* Reduce font size for smaller screens */
+  }
+
+  .btnSubmit button {
+    width: 100%; /* Make the button full width */
+    padding: 12px;
   }
 }
