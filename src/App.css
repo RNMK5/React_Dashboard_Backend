@@ -39,36 +39,77 @@ body {
   width: 100%;
 }
 
+/* Auth Section */
 .authSection {
   width: 85%;
   display: flex;
   justify-content: center;
   align-items: center;
   height: calc(100vh - 80px);
-  margin-left: 15%;
+  padding: 20px;
+  margin-left: 15%; /* account for sidebar */
 }
 
 .authForm {
   width: 100%;
-  max-width: 50%;
+  max-width: 450px;
   background-color: #fff;
-  padding: 20px;
-  border-radius: 8px;
-  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  padding: 30px;
+  border-radius: 10px;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+}
+
+.authForm h3 {
+  text-align: center;
+  color: #333;
+  margin-bottom: 20px;
+  font-weight: 700;
 }
 
 .authForm label {
   display: block;
   margin-bottom: 5px;
   font-weight: bold;
+  color: #555;
 }
 
 .authForm input {
   width: 100%;
-  padding: 10px;
+  padding: 12px;
   margin-bottom: 15px;
   border: 1px solid #ccc;
   border-radius: 4px;
+  transition: border-color 0.3s ease;
+  box-sizing: border-box; /* Ensure padding is included in width */
+}
+
+.authForm input:focus {
+  border-color: #70A288;
+  outline: none;
+}
+
+.passwordContainer {
+  position: relative;
+  width: 100%; /* Ensure container takes full width */
+}
+
+.passwordContainer input {
+  width: calc(100% - 40px); /* Adjusted width to accommodate the icon */
+  padding-right: 40px; /* Space for the icon */
+}
+
+.passwordToggleIcon {
+  position: absolute;
+  right: 10px;
+  top: 50%;
+  transform: translateY(-50%);
+  cursor: pointer;
+  color: #888;
+  width: 30px; /* Adjust icon width */
+  height: 30px; /* Adjust icon height */
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 .btnSubmit {
@@ -76,18 +117,21 @@ body {
 }
 
 .btnSubmit button {
-  padding: 10px 20px;
-  background-color:#70A288;
+  padding: 12px 30px;
+  background-color: #70A288;
   color: white;
   border: none;
   border-radius: 4px;
   cursor: pointer;
+  font-size: 16px;
+  font-weight: 600;
+  transition: background-color 0.3s ease, transform 0.2s;
 }
 
 .btnSubmit button:hover {
-  background-color: #70A288;
+  background-color: #5e9175;
+  transform: translateY(-3px);
 }
-
 .firmSection {
   padding: 20px;
   max-width: 600px;
