@@ -381,3 +381,50 @@ body {
     padding: 12px;
   }
 }
+/* NotFound component styling */
+.notFoundWrapper {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  text-align: center;
+  background: linear-gradient(135deg, #e73103, #df2407); /* Gradient background */
+  color: #ffffff;
+  font-family: 'Arial', sans-serif;
+}
+
+.goBackButton {
+  margin-bottom: 30px;
+  padding: 10px 20px;
+  background-color: #ffffff;
+  color: #c73511;
+  border-radius: 5px;
+  text-decoration: none;
+  font-weight: bold;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.goBackButton:hover {
+  background-color: #cb2f08;
+  color: #ffffff;
+}
+
+.notFoundContent {
+  background: rgba(0, 0, 0, 0.5); /* Semi-transparent background for content */
+  padding: 40px;
+  border-radius: 10px;
+}
+
+.notFoundTitle {
+  font-size: 8rem;
+  font-weight: 900;
+  margin: 0;
+  color: #ffffff;
+}
+
+.notFoundMessage {
+  font-size: 1.5rem;
+  margin: 20px 0 0;
+  color: #ffffff;
+}
